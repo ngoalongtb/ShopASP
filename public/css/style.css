@@ -78,6 +78,10 @@ section {
   height: 300px;
   padding: 10px 100px; }
 
+footer .center {
+  text-align: center; }
+footer .right {
+  text-align: right; }
 footer #footerTop, footer #footerBottom {
   padding: 0 100px;
   background-color: #08080b;
@@ -88,16 +92,16 @@ footer #footerTop, footer #footerBottom {
   display: flex; }
 footer #footerTop {
   justify-content: space-between; }
-  footer #footerTop .center {
-    text-align: center; }
-  footer #footerTop .right {
-    text-align: right; }
 footer #footerContent {
-  display: flex;
-  align-items: center;
-  padding: 0 100px;
-  height: 100px;
-  background-color: #D5D5D5; }
+  padding: 20px 100px;
+  background-color: #D5D5D5;
+  overflow: hidden; }
+  footer #footerContent h2 {
+    font-size: 17px;
+    padding-bottom: 10px;
+    font-weight: bold; }
+  footer #footerContent h3 {
+    font-size: 14px; }
 footer #footerBottom {
   justify-content: center; }
 footer .orange {

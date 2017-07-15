@@ -148,7 +148,14 @@ section{
     height:300px;
     padding:10px 100px;
 }
+
 footer{
+    .center{
+            text-align:center;
+        }
+    .right{
+        text-align:right;
+    }
     #footerTop, #footerBottom{
         padding:0 100px;
         background-color: $bg-nav;
@@ -160,20 +167,23 @@ footer{
     }
     #footerTop{
         justify-content: space-between;
-        .center{
-            text-align:center;
-        }
-        .right{
-            text-align:right;
-        }
+        
     }
     #footerContent{
-        display: flex;
-        align-items: center;
-        padding:0 100px;
-        height:100px;
+        padding:20px 100px;
         background-color: $bg-footer;
+        overflow:hidden;
+        h2{
+            font-size:17px;
+            padding-bottom:10px;
+            font-weight:bold;
+            
+        }
+        h3{
+            font-size:14px;
+        }
     }
+
     #footerBottom{
         justify-content: center;
     }

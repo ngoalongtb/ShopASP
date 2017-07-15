@@ -45,8 +45,28 @@
             <div class="col-md-4 center">Chăm sóc khách hàng : <span class='orange'>0966 810 905</span></div>
             <div class="col-md-4 right">Giao hàng nhanh, trả hàng miễn phí</div>
         </div>
-        <div id="footerContent">
-
+        <div id="footerContent" class="row">
+            <div class="col-md-4">
+                <h2>Thành viên nhóm 4</h2>
+                <h3>Nguyễn Thị Kiều</h3>
+                <h3>Lương Hồng Quảng</h3>
+                <h3>Tạ Minh Luận</h3>
+                <h3>Hoàng Công Hiếu</h3>
+            </div>
+            <div class="col-md-4 center">
+                <h2>Liên hệ</h2>
+                <h3>0966 810 905</h3>
+                <h3>0168 542 2617</h3>
+                <h3>0966 810 905</h3>
+                <h3>0966 784 763</h3>
+            </div>
+            <div class="col-md-4 center">
+                <h2>Facebook</h2>
+                <h3><a href="#">Kiều</h3>
+                <h3><a href="#">Quảng</h3>
+                <h3><a href="#">Luận</h3>
+                <h3><a href="#">Hiếu</h3>
+            </div>
         </div>
         <div id="footerBottom">
             © Copyright 2017  <span class='orange'>  KHMT4</span>
