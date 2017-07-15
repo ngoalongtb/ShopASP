@@ -1,0 +1,183 @@
+$color1 : #EF5F21;
+$color2 : #589D3E;
+$color3 : #00ACED;
+$color4 : #D61F85;
+$color5 : #F89F1B;
+$color6 : #00677C;
+$color7 : #D5331D;
+$color8 : #00405d;
+$color9 : #9CB43A;
+$color10 : #0AA4FC;
+$color11 : #B800FF;
+$color12 : #07A289;
+
+$bg-nav: #08080b;
+$bg-footer:#D5D5D5;
+
+@font-face {
+    font-family: font-opensans;
+    src: url('/public/font/OpenSans/OpenSans-Regular.ttf');
+}
+*{
+    margin:0;
+    padding:0;
+}
+
+a{
+    text-decoration: none;
+    &:hover{
+        text-decoration:none;
+    }
+}
+ul{
+    list-style: none;
+    display: inline-block;
+}
+li{
+    display: inline-block;
+    margin-left: -5px;
+}
+body{
+    background-color: white;
+    font-family:font-opensans;
+}
+header{
+    #headerTop{
+        height:70px;
+        display:flex;
+        align-items:center;
+        padding: 20px 100px 20px 100px;
+        justify-content: space-between;
+        img{
+            margin-top:-10px;
+        }
+        ul{
+            li{
+                padding: 0 15px;
+                text-transform: uppercase;
+                a{
+                    color:black;
+                } 
+                &:hover{
+                    a{
+                        color:grey;
+                    }
+                }
+            }
+        }
+    }
+    #headerBottom{
+        background-color: $bg-nav;
+        height:45px;
+        padding: 5px 100px 0px 100px;
+        ul{
+            margin-left:-20px;
+            li{
+                padding:7px 20px;
+                a{
+                    color:white;
+                }
+                transition: background-color 1s ease;
+                margin: 0 2px;
+            }
+            .color1{
+                &:hover{
+                    background-color: $color1;
+                }
+            }
+            .color2{
+                &:hover{
+                    background-color: $color2;
+                }
+            }
+            .color3{
+                &:hover{
+                    background-color: $color3;
+                }
+            }
+            .color4{
+                &:hover{
+                    background-color: $color4;
+                }
+            }
+            .color5{
+                &:hover{
+                    background-color: $color5;
+                }
+            }
+            .color6{
+                &:hover{
+                    background-color: $color6;
+                }
+            }
+            .color7{
+                &:hover{
+                    background-color: $color7;
+                }
+            }
+            .color8{
+                &:hover{
+                    background-color: $color8;
+                }
+            }
+            .color9{
+                &:hover{
+                    background-color: $color9;
+                }
+            }
+            .color10{
+                &:hover{
+                    background-color: $color10;
+                }
+            }
+            .color11{
+                &:hover{
+                    background-color: $color11;
+                }
+            }
+            .color12{
+                &:hover{
+                    background-color: $color12;
+                }
+            }
+        }
+    }
+    
+}
+section{
+    height:300px;
+    padding:10px 100px;
+}
+footer{
+    #footerTop, #footerBottom{
+        padding:0 100px;
+        background-color: $bg-nav;
+        height: 33px;
+        font-size: 12px;
+        color:white;
+        align-items: center;
+        display: flex;
+    }
+    #footerTop{
+        justify-content: space-between;
+        .center{
+            text-align:center;
+        }
+        .right{
+            text-align:right;
+        }
+    }
+    #footerContent{
+        display: flex;
+        align-items: center;
+        padding:0 100px;
+        height:100px;
+        background-color: $bg-footer;
+    }
+    #footerBottom{
+        justify-content: center;
+    }
+    .orange{
+        color:orange;
+    }
+}

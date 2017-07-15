@@ -1,0 +1,56 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link rel="stylesheet" href="public/bootstrap/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="" href="public/css/style.css"/>
+    <script src="public/bootstrap/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <header>
+        <div id="headerTop">
+            <img src="public/images/logo.png" alt="">
+            <ul>
+                <li><a href="index.aspx">Trang chủ</a></li>
+                <li><a href="GioHang.aspx">Giỏ hàng</a></li>
+                <li><a href="DangNhap.aspx">Đăng nhập</a></li>
+                <li><a href="DangKy.aspx">Đăng ký</a></li>
+            </ul>
+        </div>
+        <div id="headerBottom"> 
+            <ul>
+                <li class='color1'><a href="index.aspx">Trang chủ</a></li>
+                <li class='color2'><a href="Shop.aspx?category=nam">Nam</a></li>
+                <li class='color3'><a href="Shop.aspx?category=nu">Nữ</a></li>
+                <li class='color4'><a href="Shop.aspx?category=tre em">Trẻ em</a></li>
+                <li class='color5'><a href="Shop.aspx?category=the thao">Thể thao</a></li>
+                <li class='color6'><a href="Shop.aspx?category=cong so">Công sở</a></li>
+            </ul>
+        </div>
+    </header>
+    <form id="form1" runat="server">
+    <section>
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </section>
+    </form>
+    <footer>
+        <div id="footerTop" class="row">
+            <div class="col-md-4">Miễn phí giao hàng với hóa đơn trên 500.000</div>
+            <div class="col-md-4 center">Chăm sóc khách hàng : <span class='orange'>0966 810 905</span></div>
+            <div class="col-md-4 right">Giao hàng nhanh, trả hàng miễn phí</div>
+        </div>
+        <div id="footerContent">
+
+        </div>
+        <div id="footerBottom">
+            © Copyright 2017  <span class='orange'>  KHMT4</span>
+        </div>
+    </footer>
+</body>
+</html>
