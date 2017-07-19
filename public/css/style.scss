@@ -15,14 +15,17 @@ $bg-nav: #08080b;
 $bg-footer:#D5D5D5;
 
 @font-face {
-    font-family: font-opensans;
-    src: url('/public/font/OpenSans/OpenSans-Regular.ttf');
+    font-family: fontOpenSans;
+    src: url('public/font/OpenSans/OpenSans-Regular.ttf');
 }
 *{
     margin:0;
     padding:0;
 }
-
+h2, h3{
+    margin:0;
+    padding:0;
+}
 a{
     text-decoration: none;
     &:hover{
@@ -39,7 +42,7 @@ li{
 }
 body{
     background-color: white;
-    font-family:font-opensans;
+    font-family:fontOpenSans;
 }
 header{
     #headerTop{
@@ -145,14 +148,18 @@ header{
     
 }
 section{
-    height:300px;
+    height:400px;
     padding:10px 100px;
+    .title{
+        border-bottom:1px solid rgba(100,100,100,.1);
+        padding:10px 0;
+    }
 }
 
 footer{
     .center{
-            text-align:center;
-        }
+        text-align:center;
+    }
     .right{
         text-align:right;
     }
@@ -167,7 +174,6 @@ footer{
     }
     #footerTop{
         justify-content: space-between;
-        
     }
     #footerContent{
         padding:20px 100px;
@@ -189,5 +195,61 @@ footer{
     }
     .orange{
         color:orange;
+    }
+}
+.item{
+    .itemTop{
+        border:1px solid rgba(100,100,100,.1);
+        padding:10px;
+    }
+    h2{
+        font-size: 18px;
+    }
+    h3{
+        font-size:16px;
+    }
+}
+.itemFooter{
+    height:30px;
+    display: flex;
+    flex-direction: row;
+    &:hover{
+        cursor:hand;
+    }
+    .itemPrice{
+        display: flex;
+        align-items:center;
+        width:50%;
+        justify-content: center;
+        background-color: $bg-footer;
+        font-size: 18px;
+    }
+    .itemButton{
+        display: flex;
+        align-items:center;
+        justify-content: center;
+        width:50%;
+        background-color: $bg-nav;
+        color:white;
+        font-size: 18px;
+    }
+}
+.detail{
+    img{
+        width:100%;
+    }
+    .price{
+        padding-bottom:20px;
+        color:orange;
+    }
+    .btn-black{
+        background-color: #555555;
+        padding:10px 20px;
+        color:white;
+        border-bottom:3px solid $bg-nav;
+        font-size:18px;
+    }
+    p{
+        padding-top:40px;
     }
 }

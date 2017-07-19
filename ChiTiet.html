@@ -1,11 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
-
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <asp:ContentPlaceHolder id="head" runat="server">
-    </asp:ContentPlaceHolder>
+<head>
     <link rel="stylesheet" href="public/bootstrap/css/bootstrap.min.css"/>
     <link rel="stylesheet" type="" href="public/css/style.css"/>
     <script src="public/bootstrap/js/bootstrap.min.js"></script>
@@ -33,10 +26,21 @@
         </div>
     </header>
     <form id="form1" runat="server">
-    <section>
-        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
-        
-        </asp:ContentPlaceHolder>
+    <section class="detail">
+        <div class="row">
+            <div class="col-md-4">
+                <img src="public/images/pic.jpg" alt="">
+            </div>
+            <div class="col-md-8">
+                <h1 class='name'>LOREM IPSUM DOLOR SIT AMET</h1>
+                <h2 class='price'>50.000</h2>
+                <a href="#" class='btn-black'>Thêm vào giỏ hàng</a>
+                
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                     sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit 
+                    in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+            </div>
+        </div>
     </section>
     </form>
     <footer>

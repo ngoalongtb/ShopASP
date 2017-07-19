@@ -1,7 +1,11 @@
 @font-face {
-  font-family: font-opensans;
-  src: url("/public/font/OpenSans/OpenSans-Regular.ttf"); }
+  font-family: fontOpenSans;
+  src: url("public/font/OpenSans/OpenSans-Regular.ttf"); }
 * {
+  margin: 0;
+  padding: 0; }
+
+h2, h3 {
   margin: 0;
   padding: 0; }
 
@@ -20,7 +24,7 @@ li {
 
 body {
   background-color: white;
-  font-family: font-opensans; }
+  font-family: fontOpenSans; }
 
 header #headerTop {
   height: 70px;
@@ -75,8 +79,11 @@ header #headerBottom {
       background-color: #07A289; }
 
 section {
-  height: 300px;
+  height: 400px;
   padding: 10px 100px; }
+  section .title {
+    border-bottom: 1px solid rgba(100, 100, 100, 0.1);
+    padding: 10px 0; }
 
 footer .center {
   text-align: center; }
@@ -106,5 +113,49 @@ footer #footerBottom {
   justify-content: center; }
 footer .orange {
   color: orange; }
+
+.item .itemTop {
+  border: 1px solid rgba(100, 100, 100, 0.1);
+  padding: 10px; }
+.item h2 {
+  font-size: 18px; }
+.item h3 {
+  font-size: 16px; }
+
+.itemFooter {
+  height: 30px;
+  display: flex;
+  flex-direction: row; }
+  .itemFooter:hover {
+    cursor: hand; }
+  .itemFooter .itemPrice {
+    display: flex;
+    align-items: center;
+    width: 50%;
+    justify-content: center;
+    background-color: #D5D5D5;
+    font-size: 18px; }
+  .itemFooter .itemButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    background-color: #08080b;
+    color: white;
+    font-size: 18px; }
+
+.detail img {
+  width: 100%; }
+.detail .price {
+  padding-bottom: 20px;
+  color: orange; }
+.detail .btn-black {
+  background-color: #555555;
+  padding: 10px 20px;
+  color: white;
+  border-bottom: 3px solid #08080b;
+  font-size: 18px; }
+.detail p {
+  padding-top: 40px; }
 
 /*# sourceMappingURL=style.css.map */
