@@ -6,11 +6,15 @@
 <head runat="server">
     <asp:ContentPlaceHolder id="head" runat="server">
     </asp:ContentPlaceHolder>
+    
     <link rel="stylesheet" href="public/bootstrap/css/bootstrap.min.css"/>
-    <link rel="stylesheet" type="" href="public/css/style.css"/>
+    <link rel="stylesheet" href="public/css/style.css"/>
     <script src="public/bootstrap/js/bootstrap.min.js"></script>
+    <meta charset="UTF-8"/>
 </head>
 <body>
+    <form id="form1" runat="server">
+        
     <header>
         <div id="headerTop">
             <img src="public/images/logo.png" alt="">
@@ -21,18 +25,20 @@
                 <li><a href="DangKy.aspx">Đăng ký</a></li>
             </ul>
         </div>
+        <div>
+            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:KieuShopConnectionString %>" SelectCommand="SELECT * FROM [DanhMuc]"></asp:SqlDataSource>
+        </div>
         <div id="headerBottom">
             <ul>
                 <li class='color1'><a href="index.aspx">Trang chủ</a></li>
-                <li class='color2'><a href="Shop.aspx?category=nam">Nam</a></li>
-                <li class='color3'><a href="Shop.aspx?category=nu">Nữ</a></li>
-                <li class='color4'><a href="Shop.aspx?category=tre em">Trẻ em</a></li>
-                <li class='color5'><a href="Shop.aspx?category=the thao">Thể thao</a></li>
-                <li class='color6'><a href="Shop.aspx?category=cong so">Công sở</a></li>
+                <asp:ListView ID="ListView1" runat="server" DataKeyNames="MaDanhMuc" DataSourceID="SqlDataSource1">
+                    <ItemTemplate>
+                        <li class='color<%# Container.DataItemIndex + 2 %>'><a href="Shop.aspx?category=<%# Eval("MaDanhMuc") %>"><%# Eval("tenDanhMuc") %></a></li>
+                    </ItemTemplate>
+                </asp:ListView>
             </ul>
         </div>
     </header>
-    <form id="form1" runat="server">
     <section>
         <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
         

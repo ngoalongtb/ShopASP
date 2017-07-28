@@ -10,6 +10,6 @@ public partial class Shop : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
         string s = Request.QueryString["category"];
-        lbl.Text = s;
+
     }
 }

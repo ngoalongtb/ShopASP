@@ -16,7 +16,7 @@ $bg-footer:#D5D5D5;
 
 @font-face {
     font-family: fontOpenSans;
-    src: url('public/font/OpenSans/OpenSans-Regular.ttf');
+    src: url('../font/OpenSans/OpenSans-Regular.ttf');
 }
 *{
     margin:0;
@@ -148,12 +148,26 @@ header{
     
 }
 section{
-    height:400px;
-    padding:10px 100px;
-    .title{
-        border-bottom:1px solid rgba(100,100,100,.1);
-        padding:10px 0;
+    padding:20px 100px;
+    .row{
+        padding-bottom: 20px;
+        a{
+            color:black;
+            width:100%;
+        }
+        .title{
+            padding:10px 0;
+        }
+        .item{
+            padding-top: 20px;
+            .itemFooter{
+                .itemButton{
+                    cursor: pointer;
+                }
+            }
+        }
     }
+    
 }
 
 footer{
