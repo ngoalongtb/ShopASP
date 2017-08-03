@@ -1,0 +1,276 @@
+@font-face {
+  font-family: fontOpenSans;
+  src: url("../font/OpenSans/OpenSans-Regular.ttf");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+h2, h3 {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+  display: inline-block;
+}
+
+body {
+  background-color: white;
+  font-family: fontOpenSans;
+}
+
+header {
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(100, 100, 100, 0.3);
+}
+
+header ul li {
+  padding: 0 15px;
+  text-transform: uppercase;
+}
+
+header ul li a {
+  color: black;
+}
+
+header ul li input {
+  border: none;
+  background: white;
+}
+
+header ul li:hover a, header ul li:hover input {
+  color: grey;
+}
+
+section {
+  height: calc(100% - 70px);
+  background: white;
+}
+
+section #left {
+  float: left;
+  width: 250px;
+  background: white;
+}
+
+section #left .l-header input {
+  border: 1px solid rgba(100, 100, 100, 0.3);
+  margin: 10px;
+  margin-right: 0;
+  padding: 3px 10px;
+  border-top-left-radius: 3px;
+}
+
+section #left .l-header input:focus {
+  outline: none;
+}
+
+section #left .l-header a {
+  margin-left: -5px;
+  color: black;
+  border: 1px solid rgba(100, 100, 100, 0.3);
+  padding: 3px 20px 4px 20px;
+  border-bottom-right-radius: 3px;
+}
+
+section #left .l-header a:hover {
+  background: rgba(100, 100, 100, 0.3);
+}
+
+section #left ul {
+  width: 100%;
+}
+
+section #left ul li {
+  padding: 10px;
+  text-transform: uppercase;
+}
+
+section #left ul li a {
+  color: black;
+}
+
+section #left ul li span {
+  padding: 10px;
+}
+
+section #left ul li:hover {
+  background: rgba(100, 100, 100, 0.3);
+}
+
+section #left ul li:hover a {
+  color: grey;
+}
+
+section #right {
+  float: left;
+  width: calc(100% - 250px);
+  border-left: 1px solid rgba(100, 100, 100, 0.3);
+  padding: 10px;
+  overflow: hidden;
+}
+
+section #right .table-header th {
+  text-align: center;
+}
+
+section #right .text-center {
+  text-align: center;
+}
+
+section #right .ddl {
+  width: 200px;
+  padding: 5px 10px;
+  margin: 10px 0;
+  border-radius: 3px;
+  border: 1px solid rgba(100, 100, 100, 0.3);
+}
+
+section #right .ddl:focus {
+  outline: none;
+}
+
+section #right .manager-header {
+  display: flex;
+  justify-content: space-between;
+  padding-right: 100px;
+  align-items: center;
+}
+
+section #right .manager-header .btn {
+  padding: 5px 10px;
+  margin-bottom: 2px;
+  border: 1px solid rgba(100, 100, 100, 0.3);
+}
+
+section #right .manager-header .mh-right input {
+  border: 1px solid rgba(100, 100, 100, 0.3);
+  width: 200px;
+  padding: 5px 10px;
+  margin: 10px 0;
+  border-radius: 3px;
+}
+
+section #right .manager-header .mh-right input:focus {
+  outline: none;
+}
+
+section #right .table tr, section #right .table td {
+  border: none;
+}
+
+section #right .table tr {
+  padding: 10px;
+  border: none;
+}
+
+section #right .table input {
+  padding: 5px 10px;
+  border: 1px solid rgba(100, 100, 100, 0.3);
+  border-radius: 3px;
+}
+
+section #right .table textarea {
+  width: 400px;
+  height: 150px;
+}
+
+section #right h1 {
+  border-bottom: 1px solid rgba(100, 100, 100, 0.3);
+  padding: 10px;
+}
+
+section #right .row {
+  margin: 0;
+}
+
+section #right .row .item-manager {
+  border-radius: 5px;
+}
+
+section #right .row .item-manager .item-manager-content {
+  color: white;
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+}
+
+section #right .row .item-manager .item-manager-content span {
+  font-size: 70px;
+}
+
+section #right .row .item-manager .item-manager-content div {
+  display: flex;
+  flex-direction: column;
+  padding-left: 20px;
+}
+
+section #right .row .item-manager .item-manager-content div .number {
+  font-size: 30px;
+}
+
+section #right .row .item-manager .item-manager-content div .title {
+  font-size: 20px;
+}
+
+section #right .row .item-manager .item-manager-footer {
+  background: white;
+  padding: 10px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+section #right .row .item1 {
+  background: #337ab7;
+  border: 1px solid #337ab7;
+}
+
+section #right .row .item1 a {
+  color: #337ab7;
+}
+
+section #right .row .item2 {
+  background: #5cb85c;
+  border: 1px solid #5cb85c;
+}
+
+section #right .row .item2 a {
+  color: #5cb85c;
+}
+
+section #right .row .item3 {
+  background: #f0ad4e;
+  border: 1px solid #f0ad4e;
+}
+
+section #right .row .item3 a {
+  color: #f0ad4e;
+}
+
+section #right .row .item4 {
+  background: #d9534f;
+  border: 1px solid #d9534f;
+}
+
+section #right .row .item4 a {
+  color: #d9534f;
+}
+ 
+
+ /*# sourceMappingURL= admin.css.map */

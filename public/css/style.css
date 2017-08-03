@@ -57,6 +57,12 @@ header #headerTop ul li a {
   color: black;
 }
 
+header #headerTop ul li input {
+  border: none;
+  background: white;
+  text-transform: uppercase;
+}
+
 header #headerTop ul li:hover a {
   color: grey;
 }
@@ -205,18 +211,35 @@ footer .orange {
   padding: 10px;
 }
 
+.item .itemTop .itemImage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.item .itemTop .itemImage a {
+  display: flex;
+  justify-content: center;
+}
+
 .item h2 {
   font-size: 18px;
+  padding-bottom: 10px;
 }
 
 .item h3 {
   font-size: 16px;
+  padding-bottom: 10px;
 }
 
 .itemFooter {
   height: 30px;
   display: flex;
   flex-direction: row;
+}
+
+.itemFooter h3 {
+  padding-bottom: 0;
 }
 
 .itemFooter:hover {
@@ -264,5 +287,4 @@ footer .orange {
 }
  
 
-
-  /*# sourceMappingURL=style.css.map */
+ /*# sourceMappingURL= style.css.map */

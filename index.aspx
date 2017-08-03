@@ -6,8 +6,6 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <div>
         <asp:SqlDataSource ID="sqldsCategory" runat="server" ConnectionString="<%$ ConnectionStrings:KieuShopConnectionString %>" SelectCommand="SELECT * FROM [DanhMuc]"></asp:SqlDataSource>
-        
-
     </div>
     <asp:ListView ID="ListView2" runat="server" DataKeyNames="MaDanhMuc" DataSourceID="sqldsCategory">
         <ItemTemplate>
@@ -31,13 +29,16 @@
                                 <h2><%# Eval("TenHang") %></h2>
                                 <h3><%# Eval("MaHang") %></h3>
                             </div>
-                            <a href="ChiTiet.html">
-                                <img src="public/images/pic.jpg" alt="Alternate Text" />
-                            </a>
+                            <div class="itemImage">
+                                <a href="ChiTiet.aspx?MaHang=<%# Eval("MaHang") %>">
+                                    <img src="public/images/<%# Eval("Anh") %>" alt="Alternate Text" width="250" height="333"/>
+                                </a>
+                            </div>
+                            
                         </div>
                         <div class="itemFooter">
                             <div class="itemPrice">
-                                <h3>50.000</h3>
+                                <h3><%# Eval("GiaHang") %></h3>
                             </div>
                             <div class="itemButton">
                                 Buy

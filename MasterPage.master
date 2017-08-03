@@ -21,8 +21,12 @@
             <ul>
                 <li><a href="index.aspx">Trang chủ</a></li>
                 <li><a href="GioHang.aspx">Giỏ hàng</a></li>
-                <li><a href="DangNhap.aspx">Đăng nhập</a></li>
-                <li><a href="DangKy.aspx">Đăng ký</a></li>
+                <li>
+                    <asp:Button ID="btnDangNhap" runat="server" Text="Đăng nhập" OnClick="btnDangNhap_Click" />
+                </li>
+                <li>
+                    <asp:Button ID="btnDangKy" runat="server" Text="Đăng ký" OnClick="btnDangKy_Click" />
+                </li>
             </ul>
         </div>
         <div>
@@ -52,7 +56,7 @@
             <div class="col-md-4 right">Giao hàng nhanh, trả hàng miễn phí</div>
         </div>
         <div id="footerContent" class="row">
-            <div class="col-md-4">
+            <div class="col-md-4 center">
                 <h2>Thành viên nhóm 4</h2>
                 <h3>Nguyễn Thị Kiều</h3>
                 <h3>Lương Hồng Quảng</h3>

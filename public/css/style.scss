@@ -61,6 +61,11 @@ header{
                 a{
                     color:black;
                 } 
+                input{
+                    border:none;
+                    background:white;
+                    text-transform: uppercase;
+                }
                 &:hover{
                     a{
                         color:grey;
@@ -145,7 +150,6 @@ header{
             }
         }
     }
-    
 }
 section{
     padding:20px 100px;
@@ -171,6 +175,7 @@ section{
 }
 
 footer{
+    
     .center{
         text-align:center;
     }
@@ -215,17 +220,31 @@ footer{
     .itemTop{
         border:1px solid rgba(100,100,100,.1);
         padding:10px;
+        .itemImage{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            a{
+                display: flex;
+                justify-content: center;
+            }
+        }
     }
     h2{
         font-size: 18px;
+        padding-bottom:10px;
     }
     h3{
         font-size:16px;
+        padding-bottom:10px;
     }
 }
 .itemFooter{
     height:30px;
     display: flex;
+    h3{
+        padding-bottom:0;
+    }
     flex-direction: row;
     &:hover{
         cursor:hand;
@@ -250,6 +269,7 @@ footer{
 }
 .detail{
     img{
+        
         width:100%;
     }
     .price{
