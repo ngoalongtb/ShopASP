@@ -125,6 +125,10 @@ section #right {
   overflow: hidden;
 }
 
+section #right a {
+  color: black;
+}
+
 section #right .table-header th {
   text-align: center;
 }

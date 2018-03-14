@@ -41,7 +41,7 @@
                                 <h3><%# Eval("GiaHang") %></h3>
                             </div>
                             <div class="itemButton">
-                                Buy
+                                <a href="ChiTiet.aspx?MaHang=<%# Eval("MaHang") %>">Chi tiết</a>
                             </div>
                         </div> 
                     </div>

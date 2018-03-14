@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿create  database KieuShop
 go 
 use KieuShop
@@ -138,3 +139,145 @@ insert into Hang values('SMKG5',N'Áo sơ mi kẻ sọc thêu hoa','97000',N'Áo
 
 update Hang set anh = concat(maHang,'.jpg')
 
+=======
+﻿create  database KieuShop
+go 
+use KieuShop
+
+go
+create table TaiKhoan
+(
+TaiKhoan varchar(50) primary key,
+MatKhau varchar(50),
+Email varchar(255),
+DiaChi nvarchar(255),
+SoDT varchar(12),
+Loai nvarchar(10)
+)
+go
+create table DanhMuc
+(
+MaDanhMuc varchar(10) primary key,
+TenDanhMuc nvarchar(50)
+)
+go
+create  table Hang
+(
+MaHang varchar(10) primary key,
+TenHang nvarchar(50),
+GiaHang int,
+MoTa ntext,
+Anh nvarchar(255),
+MaDanhMuc varchar(10),
+ThoiGianNhap date
+)
+go
+create  table HoaDon
+(
+MaHoaDon int identity primary key,
+MaHang varchar(10),
+TaiKhoan varchar(50),
+SoLuong int,
+NgayMua date
+)
+
+alter table Hang add foreign key (MaDanhMuc) references DanhMuc(MaDanhMuc);
+alter table HoaDon add foreign key (MaHang) references Hang(MaHang)
+alter table HoaDon add foreign key (TaiKhoan) references TaiKhoan(TaiKhoan)
+
+insert into TaiKhoan values('admin','admin','admin@admin.com','admin,Ha Noi','01685422617','admin')
+insert into TaiKhoan values('quang','12345','quang@admin.com','Ngoa Long,Ha Noi','01685422617','member')
+insert into TaiKhoan values('luan','12345','luan@admin.com','ngoa Long,Ha Noi','01685422617','member')
+
+insert into DanhMuc values('madm001',N'Nam')
+insert into DanhMuc values('madm002',N'Nữ')
+insert into DanhMuc values('madm003',N'Bé trai')
+insert into DanhMuc values('madm004',N'Bé gái')
+
+insert into Hang values('SMB1',N'ÁO SƠ MI XANH NGỌC ĐẬM PHỐI CỔ','225000',N'Áo Sơ Mi Xanh Ngọc Đậm Phối Cổ SMB1 thiết kế theo form dáng sơ mi body, tay dài, cổ và tay áo viền trắng cho chàng trai vẻ thanh lịch và đầy nam tính. Chất liệu vải trơn cao cấp, mềm mịn, thoáng mát, thấm hút mồ hôi, không nhăn. Gam màu xanh ngọc đậm trẻ trung.','1.jpg','madm001','2017-07-20')
+insert into Hang values('SMB2',N'ÁO SƠ MI TÍM','245000',N'Áo Sơ Mi Trắng Phối Cổ SMB2 chất liệu vải trơn cao cấp, mềm mịn, thoáng mát, thấm hút mồ hôi, không nhăn. Hơn thế cổ và tay áo viền xanh, được đính nút là một điểm nhấn nhỏ nhưng vô cùng tiện dụng và hợp thời. Gam màu trắng thời thượng, trẻ trung.','.jpg','madm001','2017-07-20')
+insert into Hang values('SMB3',N'ÁO SƠ MI TRẮNG','245000',N'Áo Sơ Mi Trắng SMB3 mang lại nét thanh lịch, đẹp nhẹ nhàng với màu trắng kem trang nhã cùng thiết kế đơn giản. Chất liệu 100% cotton thấm hút tốt, pha sợi spandex giúp sản phẩm có độ co giãn và không nhăn nhàu co rút sau khi giặt. Thiết kế mới lạ theo phong cách Hàn Quốc, form ôm, cổ bẻ, tay dài, rất thanh lịch.','.jpg','madm001','2017-07-20')
+insert into Hang values('SMB4',N'ÁO SƠ MI ĐEN','380000',N'Áo Sơ Mi Đen SMB4 cá tính, quyến rũ với màu đen nam tính, khiến người mặc trông cực kỳ manly. Đường nét cắt may tinh tế, chất liệu cao cấp từ cotton co giãn, thấm hút tốt. Áo với form ôm body, dáng tay ngắn, cổ bẻ cài nút kín đáo. Nhấn nhá với những đường nét lượn sóng bắt mắt trên nền áo.','.jpg','madm001','2017-07-20')
+insert into Hang values('SMB5',N'Áo Sơ Mi Sọc Tay Dài','410000',N'Áo sơ mi kiểu dáng tay dài được may từ chất liệu ka tê lụa cao cấp. Thiết kế kiểu áo sơ mi đơn giản nhưng với form dáng chuẩn cho nam giới thêm tự tin. Thể hiện được phong cách lịch lãm, phong độ của phái mạnh. Chất liệu cao cấp với ưu điểm mềm mại, thông thoáng. ','.jpg','madm001','2017-07-20')
+insert into Hang values('ATB1',N'ÁO THUN CÁ SẤU ĐỎ ĐÔ','180000',N'Áo Thun Cá Sấu Đỏ Đô ATB1 phong cách khỏe khoắn, năng động cùng gam màu đỏ đô nổi bật và cuốn hút. Thiết kế tay ngắn, cổ bẻ phối viền độc đáo ở cổ và cổ tay áo tạo điểm nhấn cho sản phẩm. Logo thương hiệu gắn bên ngực áo mang đến điểm nhấn nhỏ. Chất liệu thun cá sấu mềm mại, co giãn tốt, mặc thoáng mát. Sản phẩm mang đên phong cách thời trang mới và sự thoải mái toàn diện cho người mặc.','.jpg','madm001','2017-07-20')
+insert into Hang values('ATB2',N'ÁO THUN CÁ SẤU TRẮNG','195000',N'Áo Thun Cá Sấu Trắng ATB2 phong cách thời trang Hàn Quốc, form áo ôm body giúp khoe dáng chuẩn. Áo thun cá sấu cho nam cổ bẻ, tay ngắn, viền màu bắt mắt. Gam màu trắng viền đen trên vai và cổ tay áo tạo điểm nhấn. Chất liệu thun cá sấu cao cấp thấm hút mồ hôi, co giãn tốt.','.jpg','madm001','2017-07-20')
+insert into Hang values('ATB3',N'ÁO THUN CÓ CỔ TRẮNG','',N'Áo Thun Có Cổ Trắng ATB3 đẹp cá tính từ đường nét đến màu sắc. Cách phối màu tinh tế với màu trắng kết hợp xanh đen tạo điểm nhấn cho chiếc áo. Được thiết kế đơn giản với dáng cổ bẻ, tay ngắn, form ôm body nhẹ nên rất thoải mái, năng động. Dễ dàng kết hợp được nhiều trang phục để làm bật lên vóc dáng của người mặc.','.jpg','madm001','2017-07-20')
+insert into Hang values('ATB4',N'ÁO THUN CÓ CỔ SỌC ĐEN','195000',N'Áo Thun Có Cổ Sọc Đen ATB4 màu trắng thanh lịch phối sọc đen tinh tế, hài hòa. Đường may đều đẹp, chất liệu vải thun 100% cotton mềm, mịn. Tay áo bo nhẹ phối thun khỏe khoắn. Cực dễ phối với nhiều loại quần, mang lại nét năng động, thanh lịch cho chàng.','.jpg','madm001','2017-07-20')
+insert into Hang values('ATB5',N'ÁO THUN CÁ SẤU XANH ĐEN','175000',N'Áo Thun Cá Sấu Xanh Đen ATB5 màu xanh đen phối đỏ trên vai áo cùng các đường sọc ngang trên thân áo tạo điểm nhấn. Thiết kế tay ngắn, cổ bẻ tạo sự khỏe khoắn năng động. Họa tiết xe đạp được in cao bên ngực phải áo. Form ôm body giúp tôn dáng và body chuẩn. Chất liệu thun cá sấu mềm mại, co giãn tốt, mặc thoáng mát.','.jpg','madm001','2017-07-20')
+insert into Hang values('AKB1',N'ÁO KHOÁC DA ĐEN','625000',N'Áo Khoác Da Đen AKB1 mang màu đen nam tính, bắt mắt, form dáng đẹp với những đường nét tinh tế. Thiết kế tay áo dài phối cổ trụ cá tính. Tạo điểm nhấn với nhiều chiếc túi có khóa kéo linh hoạt.','.jpg','madm001','2017-07-20')
+insert into Hang values('AKB2',N'ÁO KHOÁC DA ĐEN','625000',N'Áo Khoác Da Đen AKB2 kiểu dáng bắt mắt, tay dài phối khóa kéo, cổ trụ thấp cùng các đường cắt may tinh tế. Hai chiếc túi hông sâu rộng rất tiện lợi. Màu đen nam tính, mạnh mẽ tạo nên phong cách cực chất cho chàng.','.jpg','madm001','2017-07-20')
+insert into Hang values('AKB3',N'ÁO KHOÁC DA ĐỎ MẬN','620000',N'Áo Khoác Da Nâu AKB3 một item vừa ra mắt đã ngay lập tức chiếm được cảm tình của đông đảo các bạn trẻ yêu thích thời trang. Form dáng đẹp với những đường dập nổi ấn tượng ở ngực áo. Kiểu dáng bắt mắt tôn lên nét mạnh mẽ và cá tính của người mặc. Chất liệu da PU siêu bền đẹp, kèm lót vải bên trong mềm mại, không bị bong tróc, nứt nẻ khi sử dụng.','.jpg','madm001','2017-07-20')
+insert into Hang values('AKB4',N'ÁO KHOÁC DA NÂU','625000',N'Áo Khoác Da Nâu AKB4 kiểu dáng nam tính, đường nét gãy gọn, đẹp mắt. Thiết kế dáng cổ trụ, tay dài, túi hông sâu rộng có khóa kéo rất tiện lợi. Màu nâu sang trọng, chất liệu da PU cao cấp, kèm lót vải bên trong tạo nên phong cách cực chất cho chàng.','.jpg','madm001','2017-07-20')
+insert into Hang values('AKB5',N'ÁO KHOÁC DA XANH ĐEN','620000',N'Áo Khoác Da Xanh Đen AKB5 tạo nên nét mới lạ cho kiểu áo khoác da thường thấy. Vẫn là form áo suông thoải mái, dáng tay dài, cổ trụ thấp cá tính. AK5 còn được dập nổi các họa tiết caro, hoa lá đẹp mắt ở ngực áo. Hứa hẹn mang đến cho người mặc nhiều trải nghiệm thú vị.','.jpg','madm001','2017-07-20')
+insert into Hang values('QJB1',N'QUẦN JEAN XANH','375000',N'Quần Jean Xanh QJB1 với đường nét tổng thể hài hòa, tinh tế, phối những đường xước nhẹ nhàng ở mặt trước. Chất liệu jean bền đẹp, dày dặn, nhưng co giản nên rất thoải mái, ứng dụng cao trong nhiều hoàn cảnh. Kiểu dáng trẻ trung, bạn có thể xắn gấu quần lên cao cho thêm phần bụi bặm.','.jpg','madm001','2017-07-20')
+insert into Hang values('QJB2',N'QUẦN JEAN XANH ĐEN','385000',N'Quần Jean Xanh Đen QJB2 với thiết kế đơn giản nhưng vẫn mang nét tinh tế do đường nét và màu sắc hài hòa. Chất liệu jean cao cấp, bền đẹp, không bị phai màu và co rút khi giặt. Cập nhật xu hướng form quần skinny ôm vừa, vẫn tạo sự thoải mái khi hoạt động.','.jpg','madm001','2017-07-20')
+insert into Hang values('QJB3',N'QUẦN JEAN SKINNY ĐEN TRƠN','295000',N'Quần Jean Skinny Đen QJB3 được thiết kế và sản xuất bởi 4MEN, tổng thể màu đen trơn, không rách, không họa tiết. Hai túi xéo trước và hai túi sau rất tiện dụng. Chất liệu jean cao cấp, bền đẹp, không phai màu.','.jpg','madm001','2017-07-20')
+insert into Hang values('QJB4',N'QUẦN JEAN SKINNY ĐEN','380000',N'Quần Jean Skinny Đen QJB4 mang đến một màu đen cá tính mãnh mẽ, chất jean bền đẹp, không bị xù khi giặt. Tạo nét chấm phá với những đường xước nhẹ trên nền jean đen. Form quần skinny ôm dáng giúp bạn vừa theo kịp xu hướng vừa thể hiện phong cách riêng biệt.','.jpg','madm001','2017-07-20')
+insert into Hang values('QJB5',N'QUẦN JEAN SKINNY XANH ĐEN','395000',N'Quần Jean Skinny Xanh Đen QJB5 form quần skinny ôm vừa giúp bạn nam ôm dáng. Phối swag và vết xước nhẹ tạo sự hài hòa cho sản phẩm. Chất liệu jean cao cấp, đảm bảo chắc chắn, bền đẹp. Quần được thiết kế hai túi trước và hai túi sau tiện lợi. Nhiều size cho bạn chọn theo dáng người.','.jpg','madm001','2017-07-20')
+
+insert into Hang values('AKG1',N'Áo khoác len cardigan cao cấp','810000',N'Áo khoác len cardigan cao cấp AKG1 có thiết kế tối giản với 5 sắc màu sành điệu : đen, trắng, đỏ, xám, xanh rêu, chính sự đơn giản trong thiết kế lại mang tới hiệu ứng thời trang rất tuyệt vời cho người mặc trong mùa thu đông. Được dệt từ len sợi tổng hợp cao cấp bề mặt mềm mịn, vừa giúp giữ form áo lại vừa giúp nàng giữ ấm.','.jpg','madm002','2017-07-20')
+insert into Hang values('AKG2',N'Áo choàng dạ cổ lông chồn cao cấp','12880000',N'Áo choàng dạ cổ lông chồn cao cấp AKG2 (Màu nâu) có hai gam màu cơ bản đen và nâu, khi mặc lên người sẽ cho vẻ ngoài rất trang nhã, chỉn chu. Điểm nổi bật của dáng áo khoác này chính là ở thiết kế khuy chìm phía trong áo, ve áo được trang trí các hạt cườm đá lấp lánh sang trọng. Phần đai áo đi kèm giúp các nàng có thể thoải mái điều chỉnh độ rộng tương thích và còn tạo hiệu ứng cân đối hơn cho cơ thể. Bên cạnh đó, cổ áo được trang trí bằng một dải lông chồn tự nhiên, bề mặt lông bóng mượt và mềm mịn, xen kẽ những đường phối màu hài hòa càng làm tôn lên vẻ đẹp sang trọng và thời thượng của các quý cô.','.jpg','madm002','2017-07-20')
+insert into Hang values('AKG3',N'Áo khoác len ngắn dáng thể thao','595000',N'Áo khoác len ngắn dáng thể thao AKG3 là mẫu áo khoác không cổ, năng động và tràn đầy sức sống, đặc biệt thích hợp cho các cô nàng yêu thích phong cách sporty-chic. Hàng cúc dài cơ bản giúp quý cô thể hiện phong cách đa zi năng, vừa khoác ngoài áo thun, áo sơ mi, vừa có thể đóng lại dễ dàng, tiện dụng. Đường bo sọc ngang phần cổ áo, tay áo và đuôi áo tạo cảm giác mới lạ, lại vô cùng tôn dáng. Họa tiết logo in hình độc đáo đã tạo điểm nhấn sáng tạo cho thiết kế năng động này.','.jpg','madm002','2017-07-20')
+insert into Hang values('AKG4',N'Áo khoác cardigan cổ chữ V sâu','595000',N'Áo khoác cardigan trơn dáng ngắn cổ chữ V sâu AKG4 mang lại cảm giác ấm áp trước những cơn gió se se lạnh đầu mùa. Thừa hưởng thiết kế trọn vẹn của những kiểu áo khoác cardigan dáng ngắn truyền thống, không có cúc và vạt áo may bo nhẹ nhàng, ống tay dài bo len có thể xắn lên gọn gàng, mang tới vẻ đẹp cổ điển nhưng thanh lịch cho người mặc.','.jpg','madm002','2017-07-20')
+insert into Hang values('AKG5',N'Áo khoác len dáng dài hai túi','665000',N'Áo khoác len dáng dài hai túi AKG5 theo xu hướng classic lãng mạn, là mẫu áo khoác len nữ độc đáo, được dệt từ chất liệu len dệt kim cao cấp từ sợi tổng hợp. Là loại len dệt lấy từ len merino tự nhiên nên thiết kế này có bề mặt rất mềm mịn và độ đàn hồi cao.','.jpg','madm002','2017-07-20')
+insert into Hang values('SMG1',N'Áo sơ mi voan kẻ caro','310000',N'Áo sơ mi voan kẻ caro SMG1 thời trang nổi bật với thiết kế áo cổ tròn, xẻ chữ V, tay dài tạo nên sự mới lạ, sành điệu nhưng cũng vô cùng thanh lịch, dịu dàng, nữ tính. Hàng khuy cúc giả tại cổ áo chắc chắn, tiện dụng. Chất liệu voan nhẹ nhàng, mềm mại, không co giãn, mang đến cho nàng sự thoải mái, thoáng mát khi sử dụng trong những ngày hè nóng nực.','.jpg','madm002','2017-07-20')
+insert into Hang values('SMG2',N'Áo sơ mi nữ cổ yếm 2 dây cutout','789000',N'Áo sơ mi nữ cổ yếm 2 dây cutout thời trang SMG2 (Màu hồng) là phong cách thời trang đặc biệt, tạo nên nhiều phong cách mix đồ khác nhau dành cho các quý cô từ 20-25 tuổi. Mẫu đầm đẹp này là sự kết hợp của những chiếc áo sơ mi cổ yếm và style cutout đang thịnh hành mỗi khi hè về. Được may từ vải chiffon, thiết kế đặc biệt thích hợp vào mùa hè bởi đặc tính chống nhăn, chống nhau, không dễ phai màu và thấm hút mồ hôi vô cùng tốt.','.jpg','madm002','2017-07-20')
+insert into Hang values('SMG3',N'Sơ mi tay nơ dáng suông','240000',N'Sơ mi tay nơ dáng suông SMG3 thể hiện trọn vẹn vẻ đẹp nữ tính và thanh lịch, phù hợp với style nữ tính và duyên dáng của các quý cô hiện đại. Không quá cầu kì trong thiết kế, áo sơ mi chỉ nhấn nhá bằng một số chi tiết nơ cài gấu áo, cổ V cách điệu nhưng cũng đủ chinh phục bao ánh nhìn bởi sự đơn giản và tinh tế của mình. Gam màu xanh pastel nhẹ nhàng, tươi mát như “xua tan” mọi cảm giác nóng nực ngày hè. Thiết kế freesize cùng tay áo lỡ duyên dáng, chất vải thông thoáng và mềm mịn giúp quý cô thực sự thoải mái đón chào những ngày hè đầy nắng.','.jpg','madm002','2017-07-20')
+insert into Hang values('SMG4',N'Sơ mi nữ Hàn Quốc','12250000',N'Sơ mi Hàn Quốc độc đáo SMG4 là một mẫu áo sơ mi vô cùng nữ tính, tay áo như bông hoa loa kèn bung nở, vai áo trắng tinh khôi như màu hoa, thân áo màu đen tuyền khiến vòng 2 trở nên gọn gàng và quyến rũ hơn. Được may hoàn toàn từ chất liệu chiffon cao cấp, mềm mại, nhẹ, ít nhàu, ít nhăn, khả năng thấm mồ hôi tốt, khi mặc lên có cảm giác vô cùng thoải mái.','.jpg','madm002','2017-07-20')
+insert into Hang values('SMG5',N'Sơ mi chiffon Hàn Quốc','12350000',N'Chất liệu chiffon vẫn đang là xu hướng thời trang được ưa chuộng nhất năm 2017. Chiffon không chỉ nổi bật với sự mềm mại, thấm hút mồ hôi tốt, thoáng mát mà còn ít nhăn, ít nhàu, mang đến sự thoải mái, tiện dụng và tự tin cho bất kì ai mặc nó. Sơ mi chiffon Hàn Quốc SMG5 là mẫu áo sơ mi được làm hoàn toàn từ chất liệu chiffon cao cấp, cùng với thiết kế vô cùng nữ tính, tôn lên bờ vai và khuôn ngực của người mặc.','.jpg','madm002','2017-07-20')
+insert into Hang values('QJG1',N'Quần jeans skinny cao cấp','1830000',N'Quần jeans nữ skinny cao cấp QJG1 là một mẫu quần jeans skinny đầy cá tính, mang trong mình vẻ đẹp của sự hiện đại và phóng khoáng. Dành cho các quý cô muốn hướng tới vẻ đẹp trẻ trung, tự do và năng động. Với gam màu light blue và demin blue trẻ trung, cùng form dáng skinny thời trang ôm sát giúp khoe trọn đôi chân thon và tôn lên vòng ba đầy quyến rũ của nàng. Cạp quần cao vừa phải giúp nàng luôn tự tin, thoải mái khi vận động. Điểm nhấn của mẫu skinny này chính là ở phần ống quần được mài bạc, những đường rách tự nhiên, túi quần đính các chi tiết kim loại bắt sáng, hông quần được trang trí bởi một họa tiết thêu lạ mắt.','.jpg','madm002','2017-07-20')
+insert into Hang values('QJG2',N'Quần jeans flare Hàn Quốc','1896000',N'Được may bằng vải denim cotton cao cấp, vải co giãn tốt, giữ form và giữ màu lâu bền, luôn giữ cho nàng vẻ ngoài thanh lịch và cuốn hút mọi lúc mọi nơi. Giữ nguyên các chi tiết cổ điển của mẫu quần ống loe kinh điển, quần jeans nữ Hàn Quốc QJG2 có phần cạp cao vừa phải, ống quần ôm sát đùi và bắt đầu loe rộng từ đầu gối. ','.jpg','madm002','2017-07-20')
+insert into Hang values('QJG3',N'Quần jeans nữ ống loe cao cấp','1980000',N'Quần jeans nữ ống loe cao cấp QJG3  là một trong những mẫu flared jeans nổi bật đang rất được yêu thích tại Lury boutique. Với gam màu blue demin trẻ trung, from dáng cổ điển, phần đùi ôm dáng, tạo hiệu ứng chiều cao hiệu quả và rất tôn chân, tôn dáng ; ống quần hơi loe ra giúp nàng cân đối lại vóc dáng và giúp che đi các khuyết điểm của chân. Cạp quần cao vừa phải giúp bạn luôn tự tin, thoải mái khi vận động. Được may bằng vải  jeans cotton cao cấp, không gây kích ứng da, mang lại cảm giác thoải mái khi mặc, cúc và khóa được làm từ kim loại mạ đồng chắc chắn, đường chỉ may tinh tế, bền đẹp.','.jpg','madm002','2017-07-20')
+insert into Hang values('QJG4',N'Quần jeans baggy cao cấp','972000',N'Quần jeans baggy cao cấp QJG4 là một mẫu quần baggy jeans rất trẻ trung, sẽ mang tới cho nàng những trải nghiệm thời trang mới mẻ hơn trong mùa mốt năm nay. Thiết kế đề cao tính tiện dụng và thoải mái, theo phong cách thể thao khỏe khoắn, rất phù hợp với những chuyến du lịch, những lần xuống phố cùng bạn bè, khiến nàng trở nên trẻ trung, khỏe mạnh và cuốn hút hơn bao giờ hết.','.jpg','madm002','2017-07-20')
+insert into Hang values('QJG5',N'Quần jeans baggy công sở','1050000',N'Quần jeans baggy công sở QJG5 được may bằng vải denim cotton cao cấp, vải có khả năng co giãn tốt và bền màu, giữ cho form dáng của quần luôn ổn định và bền đẹp hơn. Thiết kế độc đáo với các đường gân nổi bật, hai túi hông lớn, trang trí bằng các đường mài bạc, quần rất thích hợp với các dịp đi du lịch, xuống phố cuối tuần. Phom suông thụng giúp người mặc vận động thoải mái trong thời gian dài.','.jpg','madm002','2017-07-20')
+insert into Hang values('ALG1',N'Áo len kẻ ngang cổ đính nơ','693000',N'Áo len kẻ ngang cổ đính nơ TA160 với sự thanh lich, gọn gàng, các tone màu trẻ trung nhưng cũng vô cùng sang trọng, là lựa chọn lý tưởng cho các cô yêu sự cổ điển, đơn giản. Thiết kế này được may từ chất liệu len dệt cao cấp, mềm mịn, thông thoáng, cách nhiệt và giữ ấm cực tốt, là mẫu áo hoàn hảo dành cho các quý cô vào mùa thu đông.','.jpg','madm002','2017-07-20')
+insert into Hang values('ALG2',N'Áo len họa tiết phối màu','770000',N'Áo len họa tiết phối màu TA158 mang đến cho các cô gái vẻ đẹp ngọt ngào, lãng mạn, đáng yêu và rất nữ tính, được may trên nền chất liệu len dệt kim mềm mịn, cao cấp, không bị xù và độ co giãn nhẹ, cho cảm giác nhẹ nhàng, giữ ẩm và không nhăn, hút ẩm cực tốt mang đến sự thoải mái cao nhất cho người mặc. Thiết kế cổ tròn đơn giản, cổ điển, được phối cùng các đường phân họa tiết nhỏ nên vẫn khá thời trang. Tay áo ống thẳng, đứng form, phối họa tiết. Phần cổ tay được bo dày dặn, không bai hay bị gião khi mặc, giặt nhiều lần.','.jpg','madm002','2017-07-20')
+insert into Hang values('ALG3',N'Áo len kẻ vạch ngang chấm','952000',N'Áo len chui đầu họa tiết kẻ vạch ngang chấm ALG3 là thiết kế áo len dáng cơ bản nhưng lại khá nổi bật bởi chất liệu vải len cao cấp có vẻ đẹp nhẹ nhàng, đơn giản, được may trên chất liệu len dệt mịn, có độ co dãn nhẹ và độ thông thoáng tốt, không những giúp người mặc bảo vệ cơ thể mà còn giúp họ thoải mái hơn trong các hoạt động.','.jpg','madm002','2017-07-20')
+insert into Hang values('ALG4',N'Áo len trơn chui đầu','840000',N'Áo len trơn chui đầu phối tua rua ngực trước ALG4 lấy cảm hứng từ những cánh hoa rơi, mang đậm phong cách Hàn Quốc với đường tua rua buông lơi nhẹ nhàng. Áo được dệt từ loại len mịn mềm mại, kín đạo, tạo cảm giác thông thoáng trong suốt quá trình sử dụng. Những sợi dây tuarua còn khiến các nàng trở nên quyến rũ và mềm mại hơn. Kiểu dáng cổ tròn và cách điệu phía trước ngực cùng form áo rộng rãi nên mang đến sự thoải mái nhất cho người mặc. ','.jpg','madm002','2017-07-20')
+insert into Hang values('ALG5',N'Áo len trơn body','560000',N'Áo len trơn body ALG5 là thiết kế dáng áo len cơ bản, có đặc tính giữ nhiệt, giữ ấm tốt. Kiểu dáng ngắn, ôm eo, thích hợp với các cô nàng có vóc dáng khác nhau. Cổ áo dáng 3 phân đơn giản, vừa ôm khít cổ vừa đảm giữ ấm, vừa tạo sự thoải mái, thanh lịch khi mặc. Phần thân áo được triển khai hợp lý, điểm nhấn là những đường kẻ sọc ngang dọc thật cá tính nhưng vẫn rất tự nhiên. Tay áo được may ôm, form thẳng, có độ co giãn nhẹ để người mặc tiện lợi hơn khi sử dụng. ','.jpg','madm002','2017-07-20')
+
+insert into Hang values('SMKB1',N'Áo sơ mi tay dài viền sọc màu','132000',N'Áo sơ mi tay dài cho bé trai từ 1 tuổi đến 8 tuổi - Giúp bé yêu sành điệu và cá tính hơn với kiểu sơ mi viền sọc phong cách.','.jpg','madm003','2017-07-20')
+insert into Hang values('SMKB2',N'Áo sơ mi ngắn tay Bigfoot','118000',N'Áo sơ mi ngắn tay Bigfoot cho bé trai phong cách Hàn Quốc thư sinh, trong sáng - Chất vải xuất cao cấp, mềm mịn, ít nhăn và lên form dáng cực đẹp, cực mát.','.jpg','madm003','2017-07-20')
+insert into Hang values('SMKB3',N'Áo sơ mi caro tay dài','115000',N'Áo sơ mi caro tay dài cho bé trai phối túi cực tây - Họa tiết caro độc đáo với cách phối màu đẹp mắt, giúp bé thật nổi bật và nam tính.','.jpg','madm003','2017-07-20')
+insert into Hang values('SMKB4',N'Áo sơ mi ngắn tay cổ caro ','105000',N'Áo sơ mi ngắn tay phối cổ caro sành điệu cho bé trai mặc cùng quần jeans, short hay lửng xuống phố đi dạo hay đi học đều cute. Chất vải cực đẹp!','.jpg','madm003','2017-07-20')
+insert into Hang values('SMKB5',N'Áo sơ mi kẻ sọc caro','118000',N'Áo sơ mi cho bé trai kẻ sọc caro năng động làm bằng chất liệu kate cao cấp, mềm mát, mang đến sự dễ chịu, thoải mái nhất cho bé khi mặc.','.jpg','madm003','2017-07-20')
+insert into Hang values('ATKB1',N'Áo thun body tay ráp lăng','78000',N'Áo thun body tay ráp lăng chất liệu thun cotton 4 chiều, 100% cotton. Màu sắc trẻ trung và nổi bật dành cho bé từ 3 tháng - 6 tuổi.','.jpg','madm003','2017-07-20')
+insert into Hang values('ATKB2',N'Áo thun sát nách in tai nghe','86000',N'Kết hợp áo thun sát nách in hình tai nghe với quần baggy là gợi ý hoàn hảo cho bé những buổi đi chơi giải ngoại hay đi công viên đấy nhé Mẹ!','.jpg','madm003','2017-07-20')
+insert into Hang values('ATKB3',N'Áo thun Nautica','80000',N'Áo thun Nautica cho bé trai size đại - Chất vải thun cá sấu cực đẹp và mát, chất vải đẹp tuyệt vời, màu sắc tươi tắn rực rỡ, chất lượng hoàn hảo. Hàng chuẩn đẹp cho con trai đi chơi, đi du lịch, hay tiệc tùng củng bố mẹ, bạn bè...','.jpg','madm003','2017-07-20')
+insert into Hang values('ATKB4',N'Áo thun cổ tim ','79000',N'Áo thun (áo phông) cổ tim dành cho bé trai 9 tháng - 9 tuổi - Thiết kế đơn giản, màu sắc tươi vui bé dễ dàng phối với quần jeans, kaki hay short đi học, đi chơi suốt mùa hè.','.jpg','madm003','2017-07-20')
+insert into Hang values('ATKB5',N'Áo thun Pokemon ','78000',N'Áo thun bé trai giá rẻ - Chất thun cotton co giãn 4 chiều cho bé thoải mái vận động. Áo có size từ 14 - 60kg.','.jpg','madm003','2017-07-20')
+insert into Hang values('AKKB1',N'Áo khoác nỉ lông mỏng ','138000',N'Áo khoác nỉ lông mỏng cho bé trai (6 tháng - 6 tuổi) - Thiết kế thời trang, phong cách nam tính. Sản phẩm có 4 màu: đỏ, xanh, xám đậm, xám nhạt cho bạn tùy chọn.Hàng Việt Nam chất lượng tốt nhất, vải cực đẹp, đường may chắc chắn cho bé mặc thoải mái và thời trang.','.jpg','madm003','2017-07-20')
+insert into Hang values('AKKB2',N'Áo khoác jeans PSB','245000',N'Áo khoác jeans PSB thời trang cho bé - Xu hướng thời trang jeans mới nhất 2017 cực chất, dễ kết hợp với nhiều kiểu trang phục khác nhau. Áo khoác jeans PSB thời trang cho bé với kiểu dáng form lửng, sát nách phối túi hộp tạo thêm điểm nhấn cho gu ăn mặc trẻ trung, hiện đại của bé yêu nhà bạn.','.jpg','madm003','2017-07-20')
+insert into Hang values('AKKB3',N'Áo khoác in hình xì trum','124000',N'Áo khoác in hình xì trum cho bé trai (9kg-23kg) - Chất vải thun cotton mềm mại, thấm hút mồ hôi nhanh. Thiết kế in hình vui nhộn tạo đểm nhấn cho áo trong bé thật đáng yêu.','.jpg','madm003','2017-07-20')
+insert into Hang values('AKKB4',N'Áo khoác phối màu thêu gấu','156000',N'Áo khoác phối màu thêu gấu siêu xinh cho bé trai - Chất thun da cá mềm mịn, hình thêu gấu, phối màu cực iu. Hai tay in chữ nổi bật.','.jpg','madm003','2017-07-20')
+insert into Hang values('AKKB5',N'Áo khoác bé trai sát nách có nón','215000',N'Áo khoác sát nách có nón cho bé trai mang lại phong cách sành điệu, cá tính và tạo điểm nhấn ấn tượng với set đồ ngày hè. Dành cho các bé từ 3 tuổi - 8 tuổi.','.jpg','madm003','2017-07-20')
+insert into Hang values('QJKB1',N'Quần jeans dài size đại','215000',N'Quần jeans dài size đại cho bé trai wash nhẹ từ 5 đến 9 tuổi - Hàng Việt Nam thiết kế cao cấp, chất jeans cao cấp mềm mịn đặc biệt.','.jpg','madm003','2017-07-20')
+insert into Hang values('QJKB2',N'Quần jean lửng bé trai','201000',N'Quần lửng jeans bé trai sành điệu – phong cách hiện đại và cá tính. Món quà tuyệt vời dành cho bé yêu.','.jpg','madm003','2017-07-20')
+insert into Hang values('QJKB3',N'Jeans lửng bé trai','190000',N'Quần short jeans dành cho bé trai cá tính bịu bặm - Cập nhật theo xu thế mới nhất 2017. Chất vải tốt!','.jpg','madm003','2017-07-20')
+insert into Hang values('QJKB4',N'Quần short jeans','230000',N'Quần short jeans dành cho bé trai cá tính bịu bặm - Cập nhật theo xu thế mới nhất 2017. Chất vải tốt!','.jpg','madm003','2017-07-20')
+insert into Hang values('QJKB5',N'Quần short jeans chữ L','215000',N'Quần short jeans dành cho bé trai cá tính bịu bặm - Cập nhật theo xu thế mới nhất 2017. Chất vải tốt!','.jpg','madm003','2017-07-20')
+
+insert into Hang values('VDKG1',N'Đầm nữ hoàng Miss Fortune','215000',N'Đầm công chúa nữ hoàng băng giá Elsa xinh đẹp cho bé gái - Sản phẩm chất lượng cao với thân áo đính đá, vải phi voan cao cấp và lót thun mềm bên trong dành cho bé yêu từ 4 đến 7 tuổi.','.jpg','madm004','2017-07-20')
+insert into Hang values('VDKG2',N'Đầm công chúa Sona','256000',N'Đầm công chúa Elsa cho bé gái cực dễ thương - Thiết kế ngắn tay, áo được may bằng chất liệu thun cotton mềm mịn, tùng xòe bằng vải phi và voan lưới cao cấp.','.jpg','madm004','2017-07-20')
+insert into Hang values('VDKG3',N'Váy đầm voan công chúa Sivir','210000',N'Những chiếc váy đầm bé gái voan dáng xòe bồng bềnh như công chúa cho bé thêm điệu đà và đáng yêu mỗi khi đi tiệc cùng ba mẹ. ','.jpg','madm004','2017-07-20')
+insert into Hang values('VDKG4',N'Đầm hóa thân công chúa Anie','196000',N'Đầm hóa thân công chúa Anna xinh đẹp cho bé gái - Thiết kế tinh tế, cho bé gái thêm nổi bật và ấn tượng mỗi khi xuất hiện. Có size dành cho bé từ 5 tuổi - 7 tuổi.','.jpg','madm004','2017-07-20')
+insert into Hang values('VDKG5',N'Áo đầm trễ vai Irelia','278000',N'Đầm ren trễ vai cho bé gái thời trang - Với thiết kế cực kỳ nữ tính sẽ là trang phục hoàn hảo dành cho các buổi tiệc, đi chơi hay chụp hình lưu niệm cuối năm.','.jpg','madm004','2017-07-20')
+insert into Hang values('AKKG1',N'Áo khoác công chúa Akali','128000',N'Áo khoác công chúa Elsa cho bé gái - Chất  vải chất lượng, mềm mại, co giãn linh hoạt, xu hướng in hình mới nhất 2017,  thiết kế tay dài, có nón, màu sắc cực đáng yêu và trẻ trung không chỉ giúp giữ ấm, che nắng mà còn cho bé thể hiện gu thời trang cực chất nữa ạ!','.jpg','madm004','2017-07-20')
+insert into Hang values('AKKG2',N'Áo khoác dáng dài Lux','145000',N'Áo khoác dáng dài cho bé gái (3 - 9 tuổi) vừa giữ ấm cơ thể bé vừa tạo phong cách thời trang mới mẻ.','.jpg','madm004','2017-07-20')
+insert into Hang values('AKKG3',N'Áo khoác lửng phối voan Ahri','164000',N'Áo khoác lửng cho bé gái phối voan điệu đà - Thiết kế xinh xắn, chất liệu chính là vải thun cotton mềm mại giúp bé giữ ấm tốt mà còn rất thời trang khi xuống phố.','.jpg','madm004','2017-07-20')
+insert into Hang values('AKKG4',N'Áo khoác len dệt kim cổ phối nơ Caitlyn','125000',N'Áo khoác len dệt kim cổ phối nơ cho bé gái vừa giữ ấm, vừa thể hiện gu thời trang cực chất cho bé ngày hè! Mang đến cho bé gái vẻ đẹp dịu dàng, thanh thoát. Sản phẩm dễ mix đồ, có size cho bé từ 3 tuổi - 9 tuổi.','.jpg','madm004','2017-07-20')
+insert into Hang values('AKKG5',N'Áo khoác jean thêu bướm Janna','210000',N'Áo khoác jean bé gái thêu bướm - Dễ kết hợp với nhiều trang phục tạo phong cách cá tính, năng động cho bé gái. Chất liệu vải jean cao cấp dày dặn giúp bảo vệ làn da của bé dưới tia nắng mặt trời. Họa tiết thêu hình bướm kèm những cành hoa hồng mặt sau tạo điểm nổi bật, thu hút nhiều ánh nhìn về phía bé gái.','.jpg','madm004','2017-07-20')
+insert into Hang values('ATKG1',N'Áo thun in hình kitty Ashe','128000',N'Sản phẩm có nhiều size cho bé từ 8 - 12 tuổi, thích hợp cho bé mặc nhà hàng ngày hay đi học, đi chơi cùng bố mẹ, người thân.','.jpg','madm004','2017-07-20')
+insert into Hang values('ATKG2',N'Áo thun in chữ shyvana','96000',N'Áo thun đẹp cho bé gái - thiết kế rộng rãi thoải mái, chất thun mát lạnh, gam màu tươi sáng đáng yêu lại dễ mix đồ vô cùng, có size lớn cho bé 8 tuổi - 12 tuổi.','.jpg','madm004','2017-07-20')
+insert into Hang values('ATKG3',N'Áo thun kiểu rớt vai luxanna','110000',N'Chất vải thun cotton 100%_4c cực đẹp, hàng Việt Nam chất lượng cao, có size cho bé 1 tuổi - 6 tuổi.','.jpg','madm004','2017-07-20')
+insert into Hang values('ATKG4',N'Áo cổ lọ croptop ezrealna','108000',N'Áo cổ lọ croptop cho bé gái sành điệu - Chất liệu thun cao cấp, co giãn, kiểu dáng croptop sành điệu giúp bạn thêm năng động, nổi bật!','.jpg','madm004','2017-07-20')
+insert into Hang values('ATKG5',N'Áo thun in gấu đáng yêu Cassiopeia','98000',N'Áo thun xinh cho bé gái - Chất thun cotton mềm mịn, thông thoáng, không gây dị ung cho bé. ','.jpg','madm004','2017-07-20')
+insert into Hang values('SMKG1',N'Áo sơ mi chấm bi thêu hoa Sejuani','108000',N'Áo sơ mi đẹp cho bé gái họa tiết chấm bi nhỏ xinh bao giờ cũng khiến bé trông thật đáng yêu và cá tính. Hàng đã có sẵn.','.jpg','madm004','2017-07-20')
+insert into Hang values('SMKG2',N'Áo sơ mi sọc rớt vai Trist','97000',N'Áo kiểu sơ mi rớt vai cách điệu - Vai áo dây cut out trễ vai nữ tính và thanh lịch giúp cho bé gái luôn tự tin bất cứ đâu.','.jpg','madm004','2017-07-20')
+insert into Hang values('SMKG3',N'Áo sơ mi caro sát nách','110000',N'Áo sơ mi sát nách cho bé gái đẹp giá rẻ - Chất liệu kate bền đẹp, thông thoáng. Thiết kế với họa tiết caro dễ thương, sinh động cho bé yêu của bạn thêm xinh xắn, đáng yêu.','.jpg','madm004','2017-07-20')
+insert into Hang values('SMKG4',N'Áo sơ mi in họa tiết vui nhộn','132000',N'Áo sơ mi cho bé gái in họa tiết vui nhộn - Vải boy mềm mại và ít nhăn, đường may tỉ mỉ và chắc chắn, họa tiết 3D vui nhộn, tạo điểm nhấn cho chiếc áo thêm duyên','.jpg','madm004','2017-07-20')
+insert into Hang values('SMKG5',N'Áo sơ mi kẻ sọc thêu hoa','97000',N'Áo sơ mi kiểu dành cho bé gái được may từ chất liệu vải kate cao cấp, mềm mại cùng thiết kế kiểu dáng hở vai mang đến cho bé sự thoải mái và dễ thương khi mặc.','.jpg','madm004','2017-07-20')
+
+update Hang set anh = concat(maHang,'.jpg')
+
+>>>>>>> 99a9937386b47f5aa6b60668cf25dca5aea6dca2

@@ -4,7 +4,7 @@
     <title>Đăng nhập</title>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-    <table class="auto-style15">
+    <table class="auto-style15 contentDangNhap">
         <tr>
             <td class="style3"><span style="color: rgb(80, 80, 80); font-family: verdana, geneva, sans-serif; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 249); text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;"><span class="Apple-converted-space">&nbsp; </span>
                 <table class="nav-justified">

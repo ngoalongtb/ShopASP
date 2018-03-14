@@ -5,7 +5,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <form id="form1" runat="server">
-    <div>
+    <div class="quanLyHang">
         <asp:SqlDataSource ID="sqldsDanhMuc" runat="server" ConnectionString="<%$ ConnectionStrings:KieuShopConnectionString %>" SelectCommand="SELECT * FROM [DanhMuc]"></asp:SqlDataSource>
         <asp:SqlDataSource ID="sqldsHang" runat="server" ConnectionString="<%$ ConnectionStrings:KieuShopConnectionString %>" DeleteCommand="DELETE FROM [Hang] WHERE [MaHang] = @MaHang" InsertCommand="INSERT INTO [Hang] ([MaHang], [TenHang], [GiaHang], [MoTa], [Anh], [MaDanhMuc], [ThoiGianNhap]) VALUES (@MaHang, @TenHang, @GiaHang, @MoTa, @Anh, @MaDanhMuc, @ThoiGianNhap)" SelectCommand="SELECT * FROM [Hang] WHERE ([MaDanhMuc] = @MaDanhMuc) and (MaHang like '%'+@search+'%' or TenHang like  '%'+@search+'%'  or LTRIM(RTRIM(@search)) = '')" UpdateCommand="UPDATE [Hang] SET [TenHang] = @TenHang, [GiaHang] = @GiaHang, [MoTa] = @MoTa, [Anh] = @Anh, [MaDanhMuc] = @MaDanhMuc, [ThoiGianNhap] = @ThoiGianNhap WHERE [MaHang] = @MaHang">
             <DeleteParameters>

@@ -37,7 +37,7 @@
             </asp:GridView>
             <table class="nav-justified">
                 <tr>
-                    <td>Mã danh mục</td>
+                    <td width="200">Mã danh mục</td>
                     <td>
                         <asp:TextBox ID="txtMaDanhMuc" runat="server" OnTextChanged="txtMaDanhMuc_TextChanged" Width="166px"></asp:TextBox>
                     </td>
@@ -45,7 +45,7 @@
                 <tr>
                     <td>Tên danh mục</td>
                     <td>
-                        <asp:TextBox ID="txtTenDanhMuc" runat="server" OnTextChanged="txtTenDanhMuc_TextChanged" Width="163px"></asp:TextBox>
+                        <asp:TextBox ID="txtTenDanhMuc" runat="server" OnTextChanged="txtTenDanhMuc_TextChanged" Width="166px"></asp:TextBox>
                     </td>
                 </tr>
             </table>

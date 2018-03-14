@@ -261,8 +261,12 @@ footer .orange {
   justify-content: center;
   width: 50%;
   background-color: #08080b;
+}
+
+.itemFooter .itemButton a {
   color: white;
-  font-size: 18px;
+  text-align: center;
+  font-size: 16px;
 }
 
 .detail img {

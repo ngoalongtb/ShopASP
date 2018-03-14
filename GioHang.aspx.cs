@@ -68,8 +68,6 @@ public partial class GioHang : System.Web.UI.Page
         Response.Redirect("index.aspx");
     }
 
-
-
     protected void butMua_Click(object sender, EventArgs e)
     {
         //NguoiDung aNguoiDung;
@@ -85,22 +83,21 @@ public partial class GioHang : System.Web.UI.Page
             sqldsHoaDon.InsertParameters["MaHang"].DefaultValue = item.MaHang;
             sqldsHoaDon.InsertParameters["SoLuong"].DefaultValue = item.SoLuong.ToString();
             sqldsHoaDon.InsertParameters["TaiKhoan"].DefaultValue = ((NguoiDung)Session["NguoiDung"]).TaiKhoan;
-            sqldsHoaDon.InsertParameters["NgayMua"].DefaultValue = DateTime.Now.ToShortDateString();
+            sqldsHoaDon.InsertParameters["NgayMua"].DefaultValue = DateTime.Now.ToString("yyyy/MM/dd");
 
             try
             {
                 sqldsHoaDon.Insert();
                 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                labThongBao.Text = "Có lỗi xảy ra";
+                labThongBao.Text = "Có lỗi xảy ra"+ ex;
 
                 return;
             }
         }
         Session.Remove("Cart");
         labThongBao.Text = "Mua thành công!!!";
-
     }
 }

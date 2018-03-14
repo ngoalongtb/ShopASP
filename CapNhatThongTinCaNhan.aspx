@@ -44,7 +44,7 @@
                 <tr>
                     <td>Mật khẩu</td>
                     <td>
-                        <asp:TextBox ID="txtMatKhau1" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="txtMatKhau1" runat="server" TextMode="Password"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="rfvMatKhau1" runat="server" ControlToValidate="txtMatKhau1" ErrorMessage="Chưa nhập" Display="Dynamic"></asp:RequiredFieldValidator>
                     </td>
                 </tr>

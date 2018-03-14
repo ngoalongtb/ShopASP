@@ -17,7 +17,7 @@
         
     <header>
         <div id="headerTop">
-            <img src="public/images/logo.png" alt="">
+            <a href="index.aspx"><img src="public/images/logo.png" alt=""></a>
             <ul>
                 <li><a href="index.aspx">Trang chủ</a></li>
                 <li><a href="GioHang.aspx">Giỏ hàng</a></li>

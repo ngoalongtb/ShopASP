@@ -64,6 +64,7 @@ section{
     height:calc(100% - 70px);
     background:white;
     
+    
     #left{
         float:left;
         width:250px;
@@ -113,6 +114,9 @@ section{
         }
     }
     #right{
+        a{
+            color:black;
+        }
         float:left;
         width:calc(100% - 250px);
         border-left: 1px solid $color1;

@@ -14,7 +14,7 @@ public partial class ThemHang : System.Web.UI.Page
 
     protected void btnCapNhat_Click(object sender, EventArgs e)
     {
-        sqldsHang.InsertCommand = string.Format("insert into Hang values('{0}', N'{1}', '{2}', N'{3}', '{0}.jpg', '{4}', '{5}')", txtMaHang.Text, txtTenHang.Text, txtGiaHang.Text, txtMoTa.Text, ddlDanhMuc.SelectedValue, DateTime.Now.ToShortDateString());
+        sqldsHang.InsertCommand = string.Format("insert into Hang values('{0}', N'{1}', '{2}', N'{3}', '{0}.jpg', '{4}', '{5}')", txtMaHang.Text, txtTenHang.Text, txtGiaHang.Text, txtMoTa.Text, ddlDanhMuc.SelectedValue, DateTime.Now.ToString("yyyy/MM/dd"));
         try
         {
             if (fileImage.HasFile)
@@ -32,9 +32,9 @@ public partial class ThemHang : System.Web.UI.Page
             sqldsHang.Insert();
             lblThongBao.Text = "Thêm mới thành công";
         }
-        catch (Exception)
+        catch (Exception ex)
         {
-            lblThongBao.Text = "Có lỗi xảy ra!!! Vui lòng kiểm tra lại!!!";
+            lblThongBao.Text = "Có lỗi xảy ra!!! Vui lòng kiểm tra lại!!!"+ex;
         }
     }
 

@@ -41,8 +41,8 @@ public partial class MasterPage : System.Web.UI.MasterPage
         }
         else
         {
-            //đăng xuất
-
+            Session.Remove("NguoiDung");
+            Response.Redirect("index.aspx");
         }
     }
 }
